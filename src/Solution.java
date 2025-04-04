@@ -10,12 +10,11 @@ public class Solution {
     public static String toCamelCase(String str){
         if (str != null){
             str = str.replaceAll("-", "_");
-            String[] words = new String[str.split("_").length];
-            words = str.split("_");
+            String[] words = str.split("_");
             String word = words[0];
 
             for (String palabra: words){
-                if (palabra != words[0]){
+                if (!palabra.equals(words[0])){
                     palabra = (palabra.substring(0,1).toUpperCase() + palabra.substring(1));
                     word += palabra;
                 }
